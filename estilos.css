@@ -11,14 +11,43 @@ body {
 }
 
 .navbar {
-	position: relative;
-	padding: 15px 20px;
-	background: rgba(255, 255, 255, 0.05);
-	border-radius: 60px;
-	backdrop-filter: blur(15px);
-	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-	border: 0.5px solid #ccc;
+position: relative;
+padding: 15px 20px;
+background:rgba(255, 255, 255, 0.05);
+border-radius: 60px;
+backdrop-filter: blur(15px);
+box-shadow: e 15px 35px rgba(0,0,0,0.5);
+border: 0.5px solid #ccc;
 }
+
+.navbar {
+position: relative;
+padding: 15px 20px;
+background:rgba(255, 255, 255, 0.05);
+border-radius: 60px;
+backdrop-filter: blur(15px);
+box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+border: 0.5px solid #ccc；
+}
+
+.navbar ul {
+            display: flex;          /* Pone los elementos en horizontal */
+            gap: 30px;              /* Espacio entre ellos */
+            list-style: none;       /* Quita los puntos de la lista */
+            margin: 0;
+            padding: 0;
+        }
+.navbar a {
+            text-decoration: none;  /* Quita el subrayado */
+            color: #ffffff;         /* Color del texto */
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ffd700;         /* Cambia de color al pasar el ratón */
+        }
 
 .contenedor {
 	width: 90%;
@@ -33,9 +62,8 @@ body {
 }
 
 .contenedor-pizzas {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 20px;
+
+	
 }
 
 .card {
@@ -47,10 +75,12 @@ body {
 	overflow: hidden;
 	background-size: cover;
 	background-position: center center;
+
 }
 
 .card .textos {
 	height: 100%;
+	
 }
 
 .banner {
@@ -59,7 +89,9 @@ body {
 	padding: 20px;
 	background-size: cover;
 	background-position: center center;
-	margin-top: 30px;
+
+
+
 }
 
 .banner ul {
@@ -86,16 +118,13 @@ body {
 }
 
 @media screen and (max-width: 900px) {
-	.contenedor-pizzas {
-		grid-template-columns: repeat(2, 1fr);
-	}
+	
 }
 
 @media screen and (max-width: 700px) {
+	
 }
 
 @media screen and (max-width: 600px) {
-	.contenedor-pizzas {
-		grid-template-columns: 1fr;
-	}
+
 }
