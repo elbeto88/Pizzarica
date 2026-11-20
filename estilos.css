@@ -1,0 +1,101 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #1D202B;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+	position: relative;
+	padding: 15px 20px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 60px;
+	backdrop-filter: blur(15px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+	border: 0.5px solid #ccc;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+}
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-pizzas {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.card {
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+}
+
+.card .textos {
+	height: 100%;
+}
+
+.banner {
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	background-size: cover;
+	background-position: center center;
+	margin-top: 30px;
+}
+
+.banner ul {
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+	.contenedor-pizzas {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 700px) {
+}
+
+@media screen and (max-width: 600px) {
+	.contenedor-pizzas {
+		grid-template-columns: 1fr;
+	}
+}
