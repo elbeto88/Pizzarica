@@ -20,16 +20,6 @@ box-shadow: e 15px 35px rgba(0,0,0,0.5);
 border: 0.5px solid #ccc;
 }
 
-.navbar {
-position: relative;
-padding: 15px 20px;
-background:rgba(255, 255, 255, 0.05);
-border-radius: 60px;
-backdrop-filter: blur(15px);
-box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-border: 0.5px solid #fbfafa;
-}
-
 .navbar ul {
             display: flex;          /* Pone los elementos en horizontal */
             gap: 30px;              /* Espacio entre ellos */
@@ -38,15 +28,15 @@ border: 0.5px solid #fbfafa;
             padding: 0;
         }
 .navbar a {
-            text-decoration: none;  /* Quita el subrayado */
-            color: #ffffff;         /* Color del texto */
+            text-decoration: none;
+            color: #ffffff;         
             font-weight: 500;
             font-size: 16px;
             transition: color 0.3s ease;
         }
 
         .navbar a:hover {
-            color: #ffd700;         /* Cambia de color al pasar el ratón */
+            color: #ffd700;         
         }
 
 .contenedor {
