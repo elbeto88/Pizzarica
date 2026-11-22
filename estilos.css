@@ -45,22 +45,20 @@ body {
 }
 
 .hero {
-	position: relative;
-	min-height: 40vh;              
+position: relative;
+	min-height: 320px;              /* ← tamaño base compacto */
 	display: flex;
-	align-items: center;          
-	justify-content: center; 
+	align-items: center;
+	justify-content: center;
 	text-align: center;
-	padding: 60px 20px;
-	margin: 20px;
+	padding: 50px 20px;
+	margin: 0 20px 20px;            /* menos margen, queda pegado a la navbar */
 	border-radius: 20px;
 	overflow: hidden;
-	background-image: url('./img/hero.jpg');
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
+
+	/* Fondo: primero la imagen, y si no carga, el degradado de respaldo */
 	background: linear-gradient(135deg, #1D202B 0%, #2c3244 100%);
-	
+	background-image: url('./img/hero.jpg');	
 }
 .hero-contenido {
 	position: relative;
