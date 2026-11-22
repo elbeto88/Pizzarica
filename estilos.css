@@ -61,6 +61,23 @@ body {
 	background-repeat: no-repeat;
 }
 
+.hero-titulo {
+	font-size: 56px;
+	font-weight: 700;
+	line-height: 1.1;
+	margin-bottom: 20px;
+	text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-subtitulo {
+	font-size: 18px;
+	line-height: 1.6;
+	margin-bottom: 30px;
+	opacity: 0.9;
+	max-width: 550px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
 
