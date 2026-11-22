@@ -10,7 +10,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-/* ---------- NAVBAR ---------- */
+
 .navbar {
 	position: relative;
 	padding: 15px 20px;
@@ -44,7 +44,6 @@ body {
 	color: #ffd700;
 }
 
-/* ---------- CONTENEDOR PRINCIPAL ---------- */
 .contenedor {
 	width: 90%;
 	max-width: 1200px;
@@ -56,10 +55,10 @@ body {
 	align-items: start;
 }
 
-/* ---------- GRID DE PIZZAS ---------- */
+
 .contenedor-pizzas {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr); /* corregido: sin espacio */
+	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
 }
 
@@ -78,22 +77,17 @@ body {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end; /* el texto se apila abajo para no tapar la imagen */
-	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* mejora legibilidad */
+	justify-content: flex-end;
+	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
-/* ---------- BANNER ---------- */
+
 .banner {
 	border-radius: 10px;
 	text-align: center;
 	padding: 20px;
 	background-size: cover;
 	background-position: center center;
-	/* width: 20%;  ← eliminado: el grid ya le asigna el ancho */
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	gap: 15px;
 }
 
 .banner ul {
@@ -122,20 +116,15 @@ body {
 
 .banner .boton:hover {
 	transform: scale(1.03);
-}
 
-/* ==================================================
-   MEDIA QUERIES (de mayor a menor)
-   ================================================== */
 
-/* Tablet grande / laptop pequeña */
 @media screen and (max-width: 900px) {
 	.contenedor {
-		grid-template-columns: 1fr; /* banner pasa debajo de las pizzas */
+		grid-template-columns: 1fr; 
 	}
 
 	.contenedor-pizzas {
-		grid-template-columns: repeat(2, 1fr); /* 2 columnas de pizzas */
+		grid-template-columns: repeat(2, 1fr); 
 	}
 
 	.banner {
@@ -143,7 +132,7 @@ body {
 	}
 }
 
-/* Tablet / móvil grande */
+
 @media screen and (max-width: 700px) {
 	.navbar ul {
 		gap: 18px;
@@ -154,7 +143,6 @@ body {
 	}
 }
 
-/* Móvil */
 @media screen and (max-width: 600px) {
 	.navbar {
 		border-radius: 20px;
