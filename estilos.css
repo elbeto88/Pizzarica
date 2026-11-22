@@ -60,6 +60,13 @@ body {
 	background-position: center center;
 	background-repeat: no-repeat;
 }
+.hero-contenido {
+	position: relative;
+	z-index: 2;                    /* por encima del overlay */
+	max-width: 700px;
+	color: #fff;
+	animation: fadeUp 0.8s ease both;  /* pequeña animación de entrada */
+}
 
 .hero-titulo {
 	font-size: 56px;
