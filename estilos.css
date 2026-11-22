@@ -59,6 +59,8 @@ body {
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
+	background: linear-gradient(135deg, #1D202B 0%, #2c3244 100%);
+	
 }
 .hero-contenido {
 	position: relative;
