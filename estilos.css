@@ -10,61 +10,57 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+/* ---------- NAVBAR ---------- */
 .navbar {
-position: relative;
-padding: 15px 20px;
-background:rgba(255, 255, 255, 0.05);
-border-radius: 60px;
-backdrop-filter: blur(15px);
-box-shadow: e 15px 35px rgba(0,0,0,0.5);
-border: 0.5px solid #ccc;
+	position: relative;
+	padding: 15px 20px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 60px;
+	backdrop-filter: blur(15px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); /* corregido: quitada la "e" */
+	border: 0.5px solid #ccc;
+	margin: 15px; /* pequeño margen para que no toque los bordes */
 }
 
 .navbar ul {
-            display: flex;          /* Pone los elementos en horizontal */
-            gap: 30px;              /* Espacio entre ellos */
-            list-style: none;       /* Quita los puntos de la lista */
-            margin: 0;
-            padding: 0;
-        }
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap; /* permite que salten de línea en pantallas pequeñas */
+	gap: 30px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 .navbar a {
-            text-decoration: none;
-            color: #ffffff;         
-            font-weight: 500;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
+	text-decoration: none;
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 16px;
+	transition: color 0.3s ease;
+}
 
-        .navbar a:hover {
-            color: #ffd700;         
-        }
+.navbar a:hover {
+	color: #ffd700;
+}
 
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
 .contenedor {
 	width: 90%;
 	max-width: 1200px;
 	margin: auto;
 	padding: 40px 0;
-  display: grid;
-  grid-template-columns:3fr 1fr;
-  gap:20px;
-  /*display: flex;
-  gap: 30px;*/
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	gap: 20px;
+	align-items: start;
 }
 
-.titulo {
-	font-size: 24px;
-	padding: 20px 0;
-}
-
+/* ---------- GRID DE PIZZAS ---------- */
 .contenedor-pizzas {
-
-/*width: 80%;
-display: flex;
-flex-wrap: wrap;
-gap: 20px; */
-display: grid;
-grid-template-columns:repeat (3, 1fr);
-gap: 20px; 
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* corregido: sin espacio */
+	gap: 20px;
 }
 
 .card {
@@ -76,35 +72,28 @@ gap: 20px;
 	overflow: hidden;
 	background-size: cover;
 	background-position: center center;
-  
-  /*width: 33.333%;
-  width: calc(33.333% -20px);*/
-  
-
 }
 
 .card .textos {
 	height: 100%;
-	
-  /*display:flex;
-  flex-direction:column ;
-  justify-content: space-between;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end; /* el texto se apila abajo para no tapar la imagen */
+	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* mejora legibilidad */
 }
 
+/* ---------- BANNER ---------- */
 .banner {
 	border-radius: 10px;
 	text-align: center;
 	padding: 20px;
 	background-size: cover;
 	background-position: center center;
-  width: 20%;
-  
-  /*display:flex;
-  flex-direction:column ;
-  justify-content: space-between;*/
-
-
-
+	/* width: 20%;  ← eliminado: el grid ya le asigna el ancho */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 15px;
 }
 
 .banner ul {
@@ -112,7 +101,7 @@ gap: 20px;
 }
 
 .banner ul li {
-	margin: 15px;
+	margin: 10px 0;
 	font-weight: bold;
 }
 
@@ -128,16 +117,72 @@ gap: 20px;
 	border-radius: 100px;
 	font-family: 'Roboto', sans-serif;
 	cursor: pointer;
+	transition: transform 0.2s ease;
 }
 
+.banner .boton:hover {
+	transform: scale(1.03);
+}
+
+/* ==================================================
+   MEDIA QUERIES (de mayor a menor)
+   ================================================== */
+
+/* Tablet grande / laptop pequeña */
 @media screen and (max-width: 900px) {
-	
+	.contenedor {
+		grid-template-columns: 1fr; /* banner pasa debajo de las pizzas */
+	}
+
+	.contenedor-pizzas {
+		grid-template-columns: repeat(2, 1fr); /* 2 columnas de pizzas */
+	}
+
+	.banner {
+		width: 100%;
+	}
 }
 
+/* Tablet / móvil grande */
 @media screen and (max-width: 700px) {
-	
+	.navbar ul {
+		gap: 18px;
+	}
+
+	.navbar a {
+		font-size: 14px;
+	}
 }
 
+/* Móvil */
 @media screen and (max-width: 600px) {
+	.navbar {
+		border-radius: 20px;
+		padding: 12px 15px;
+	}
 
+	.navbar ul {
+		gap: 12px;
+	}
+
+	.navbar a {
+		font-size: 13px;
+	}
+
+	.contenedor {
+		width: 95%;
+		padding: 20px 0;
+	}
+
+	.contenedor-pizzas {
+		grid-template-columns: 1fr; /* 1 pizza por fila */
+	}
+
+	.card {
+		min-height: 180px;
+	}
+
+	.banner ul li {
+		margin: 6px 0;
+	}
 }
