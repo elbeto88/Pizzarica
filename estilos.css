@@ -44,8 +44,11 @@ border: 0.5px solid #ccc;
 	max-width: 1200px;
 	margin: auto;
 	padding: 40px 0;
-  display: flex;
-  gap: 30px;
+  display: grid;
+  grid-template-columns:3fr 1fr;
+  gap:20px;
+  /*display: flex;
+  gap: 30px;*/
 }
 
 .titulo {
@@ -54,11 +57,14 @@ border: 0.5px solid #ccc;
 }
 
 .contenedor-pizzas {
-width: 80%;
+
+/*width: 80%;
 display: flex;
 flex-wrap: wrap;
+gap: 20px; */
+display: grid;
+grid-template-columns:repeat (3, 1fr);
 gap: 20px; 
-  
 }
 
 .card {
@@ -70,17 +76,19 @@ gap: 20px;
 	overflow: hidden;
 	background-size: cover;
 	background-position: center center;
-  width: 33.333%;
-  width: calc(33.333% -20px);
+  
+  /*width: 33.333%;
+  width: calc(33.333% -20px);*/
   
 
 }
 
 .card .textos {
 	height: 100%;
-	display:flex;
+	
+  /*display:flex;
   flex-direction:column ;
-  justify-content: space-between;
+  justify-content: space-between;*/
 }
 
 .banner {
@@ -90,9 +98,10 @@ gap: 20px;
 	background-size: cover;
 	background-position: center center;
   width: 20%;
-  display:flex;
+  
+  /*display:flex;
   flex-direction:column ;
-  justify-content: space-between;
+  justify-content: space-between;*/
 
 
 
@@ -132,3 +141,4 @@ gap: 20px;
 @media screen and (max-width: 600px) {
 
 }
+
