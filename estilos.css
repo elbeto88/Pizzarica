@@ -213,7 +213,36 @@ body {
 }
 
 
+@media screen and (max-width: 700px) {
+	.formulario {
+		grid-template-columns: 1fr;
+	}
+	.formulario-contenedor {
+		padding: 28px 22px;
+	}
+	.formulario-titulo {
+		font-size: 24px;
+	}
+}
 
+@media screen and (max-width: 600px) {
+	.seccion-formulario {
+		width: 95%;
+		margin: 20px auto;
+	}
+	.formulario-contenedor {
+		padding: 22px 18px;
+		border-radius: 15px;
+	}
+	.formulario-titulo {
+		font-size: 22px;
+	}
+	.formulario-grupo input,
+	.formulario-grupo select,
+	.formulario-grupo textarea {
+		font-size: 16px; /* evita zoom en iOS */
+	}
+}
 
 
 
