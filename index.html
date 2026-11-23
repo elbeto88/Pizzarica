@@ -100,6 +100,7 @@
 			<button class="boton">Pedir una Pizza</button>
 		</div>
 	</div>
+	
 <section class="seccion-formulario">
 	<div class="formulario-contenedor">
 		<h2 class="formulario-titulo">Haz tu pedido 🍕</h2>
@@ -107,7 +108,7 @@
 			Completa el formulario y te contactaremos por WhatsApp para confirmar.
 		</p>
 
-		<form class="formulario" action="#" method="POST">
+		<form class="formulario" id="pedidoForm">
 			<div class="formulario-grupo">
 				<label for="nombre">Nombre completo</label>
 				<input type="text" id="nombre" name="nombre" placeholder="Ej. Jorge Mena" required>
@@ -123,6 +124,17 @@
 				<input type="tel" id="whatsapp" name="whatsapp" placeholder="10 dígitos" pattern="[0-9]{10}" maxlength="10" required>
 			</div>
 
+			<div class="formulario-grupo">
+				<label for="pago">Forma de pago</label>
+				<select id="pago" name="pago" required>
+					<option value="" disabled selected>Selecciona una opción</option>
+					<option value="Efectivo">Efectivo</option>
+					<option value="Tarjeta (débito/crédito)">Tarjeta (débito/crédito)</option>
+					<option value="Transferencia bancaria">Transferencia bancaria</option>
+					<option value="Mercado Pago">Mercado Pago</option>
+				</select>
+			</div>
+
 			<div class="formulario-grupo formulario-grupo--completo">
 				<label for="direccion">Dirección de entrega</label>
 				<input type="text" id="direccion" name="direccion" placeholder="Calle, número, colonia, referencias" required>
@@ -133,32 +145,51 @@
 				<textarea id="descripcion" name="descripcion" rows="4" placeholder="Ej. Pizza grande, masa delgada, pepperoni, extra queso..." required></textarea>
 			</div>
 
-			<div class="formulario-grupo">
-				<label for="pago">Forma de pago</label>
-				<select id="pago" name="pago" required>
-					<option value="" disabled selected>Selecciona una opción</option>
-					<option value="efectivo">Efectivo</option>
-					<option value="tarjeta">Tarjeta (débito/crédito)</option>
-					<option value="transferencia">Transferencia bancaria</option>
-					<option value="mercado-pago">Mercado Pago</option>
-				</select>
-			</div>
-
-			<div class="formulario-grupo">
+			<div class="formulario-grupo formulario-grupo--completo">
 				<label for="entrega">Tipo de entrega</label>
 				<select id="entrega" name="entrega" required>
 					<option value="" disabled selected>Selecciona una opción</option>
-					<option value="domicilio">Envío a domicilio</option>
-					<option value="sucursal">Pasar por la pizza</option>
+					<option value="Envío a domicilio">Envío a domicilio</option>
+					<option value="Pasar por la pizza">Pasar por la pizza</option>
 				</select>
 			</div>
 
 			<div class="formulario-grupo formulario-grupo--completo">
-				<button type="submit" class="boton-enviar">Enviar pedido</button>
+				<button type="submit" class="boton-enviar">Enviar pedido por WhatsApp</button>
 			</div>
 		</form>
 	</div>
 </section>
+
+<script>
+document.getElementById('pedidoForm').addEventListener('submit', function (e) {
+	e.preventDefault();
+
+	const nombre      = document.getElementById('nombre').value.trim();
+	const correo      = document.getElementById('correo').value.trim();
+	const whatsapp    = document.getElementById('whatsapp').value.trim();
+	const direccion   = document.getElementById('direccion').value.trim();
+	const descripcion = document.getElementById('descripcion').value.trim();
+	const pago        = document.getElementById('pago').value;
+	const entrega     = document.getElementById('entrega').value;
+
+	const numeroPizzeria = '522291347441';
+
+	const mensaje =
+		`*Nuevo Pedido* 🍕\n\n` +
+		`*Nombre:* ${nombre}\n` +
+		`*Correo:* ${correo}\n` +
+		`*WhatsApp:* ${whatsapp}\n` +
+		`*Dirección:* ${direccion}\n\n` +
+		`*Pizza:* ${descripcion}\n\n` +
+		`*Forma de pago:* ${pago}\n` +
+		`*Entrega:* ${entrega}`;
+
+	const url = `https://wa.me/${numeroPizzeria}?text=${encodeURIComponent(mensaje)}`;
+	window.open(url, '_blank');
+});
+</script>
+
 <footer class="footer">
 	<div class="footer-contenido">
 		<div class="footer-info">
