@@ -1,4 +1,4 @@
-* {
+i* {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -189,6 +189,25 @@ body {
 .banner .boton:hover {
 	transform: scale(1.03);
 }
+
+.footer {
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(15px);
+	border: 0.5px solid #ccc;
+	border-radius: 20px;
+	margin: 20px;
+	padding: 30px 25px 0;
+}
+
+.footer-contenido {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+	align-items: center;
+	padding-bottom: 25px;
+}
+
+
 
 @media screen and (max-width: 900px) {
 	.hero {
