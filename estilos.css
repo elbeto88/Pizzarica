@@ -10,22 +10,21 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-
 .navbar {
 	position: relative;
 	padding: 15px 20px;
 	background: rgba(255, 255, 255, 0.05);
 	border-radius: 60px;
 	backdrop-filter: blur(15px);
-	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); /* corregido: quitada la "e" */
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 	border: 0.5px solid #ccc;
-	margin: 15px; /* pequeño margen para que no toque los bordes */
+	margin: 15px;
 }
 
 .navbar ul {
 	display: flex;
 	justify-content: center;
-	flex-wrap: wrap; /* permite que salten de línea en pantallas pequeñas */
+	flex-wrap: wrap;
 	gap: 30px;
 	list-style: none;
 	margin: 0;
@@ -45,49 +44,59 @@ body {
 }
 
 .hero {
-position: relative;
-	min-height: 320px;              /* ← tamaño base compacto */
+	position: relative;
+	min-height: 320px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	padding: 50px 20px;
-	margin: 0 20px 20px;            /* menos margen, queda pegado a la navbar */
+	margin: 0 20px 20px;
 	border-radius: 20px;
 	overflow: hidden;
-
-	/* Fondo: primero la imagen, y si no carga, el degradado de respaldo */
 	background: linear-gradient(135deg, #1D202B 0%, #2c3244 100%);
-	background-image: url('./img/hero.jpg');	
+	background-image: url('./img/hero.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
 }
+
 .hero-contenido {
 	position: relative;
-	z-index: 2;                    /* por encima del overlay */
+	z-index: 2;
 	max-width: 700px;
 	color: #fff;
-	animation: fadeUp 0.8s ease both;  /* pequeña animación de entrada */
+	animation: fadeUp 0.8s ease both;
 }
 
 .hero-titulo {
-	font-size: 56px;
+	font-size: 42px;
 	font-weight: 700;
-	line-height: 1.1;
-	margin-bottom: 20px;
+	line-height: 1.15;
+	margin-bottom: 12px;
 	text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 .hero-subtitulo {
-	font-size: 18px;
-	line-height: 1.6;
-	margin-bottom: 30px;
+	font-size: 17px;
+	line-height: 1.5;
+	margin-bottom: 24px;
 	opacity: 0.9;
 	max-width: 550px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-
-
+@keyframes fadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
 
 .contenedor {
 	width: 90%;
@@ -99,7 +108,6 @@ position: relative;
 	gap: 20px;
 	align-items: start;
 }
-
 
 .contenedor-pizzas {
 	display: grid;
@@ -118,14 +126,29 @@ position: relative;
 	background-position: center center;
 }
 
+.card::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.75) 0%,
+		rgba(0, 0, 0, 0.1) 60%,
+		transparent 100%
+	);
+	z-index: 0;
+	pointer-events: none;
+}
+
 .card .textos {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+	position: relative;
+	z-index: 1;
 	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
-
 
 .banner {
 	border-radius: 10px;
@@ -133,6 +156,10 @@ position: relative;
 	padding: 20px;
 	background-size: cover;
 	background-position: center center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 15px;
 }
 
 .banner ul {
@@ -161,55 +188,31 @@ position: relative;
 
 .banner .boton:hover {
 	transform: scale(1.03);
-
-
+}
 
 @media screen and (max-width: 900px) {
 	.hero {
-		min-height: 70vh;
-		margin: 15px;
-		padding: 50px 20px;
+		min-height: 300px;
+		margin: 0 15px 15px;
+		padding: 40px 20px;
 	}
+
 	.hero-titulo {
-		font-size: 42px;
-	}
-}
-
-@media screen and (max-width: 600px) {
-	.hero {
-		min-height: 75vh;
-		margin: 10px;
-		padding: 40px 18px;
-		border-radius: 15px;
-	}
-	.hero-titulo {
-		font-size: 32px;
-	}
-	.hero-subtitulo {
-		font-size: 16px;
-	}
-	.hero-botones {
-		flex-direction: column;    /* botones apilados en vertical */
-		width: 100%;
-	}
-	.boton {
-		width: 100%;               /* botón ancho completo en móvil */
-		padding: 14px 20px;
+		font-size: 36px;
 	}
 
-
-@media screen and (max-width: 900px) {
-	/* reglas */
-}
-
-@media screen and (max-width: 700px) {
-	/* reglas */
-}
-
-@media screen and (max-width: 600px) {
-	.contenedor-pizzas {
+	.contenedor {
 		grid-template-columns: 1fr;
 	}
+
+	.contenedor-pizzas {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.banner {
+		width: 100%;
+	}
+}
 
 @media screen and (max-width: 700px) {
 	.navbar ul {
@@ -235,17 +238,46 @@ position: relative;
 		font-size: 13px;
 	}
 
+	.hero {
+		min-height: 260px;
+		margin: 0 10px 10px;
+		padding: 32px 18px;
+		border-radius: 15px;
+	}
+
+	.hero-titulo {
+		font-size: 28px;
+	}
+
+	.hero-subtitulo {
+		font-size: 15px;
+		margin-bottom: 18px;
+	}
+
 	.contenedor {
 		width: 95%;
 		padding: 20px 0;
 	}
 
 	.contenedor-pizzas {
-		grid-template-columns: 1fr; /* 1 pizza por fila */
+		grid-template-columns: 1fr;
+		gap: 15px;
 	}
 
 	.card {
-		min-height: 180px;
+		min-height: 220px;
+		padding: 16px;
+		border-radius: 12px;
+	}
+
+	.card .textos h3 {
+		font-size: 18px;
+		line-height: 1.2;
+	}
+
+	.card .textos p {
+		font-size: 15px;
+		opacity: 0.9;
 	}
 
 	.banner ul li {
