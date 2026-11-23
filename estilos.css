@@ -212,6 +212,148 @@ body {
 	transform: translateY(0);
 }
 
+.seccion-promos {
+	width: 90%;
+	max-width: 1200px;
+	margin: 40px auto;
+}
+
+.promos-titulo {
+	font-size: 28px;
+	font-weight: 700;
+	text-align: center;
+	color: #FFD600;
+	margin-bottom: 8px;
+}
+
+.promos-subtitulo {
+	font-size: 15px;
+	text-align: center;
+	opacity: 0.8;
+	margin-bottom: 30px;
+}
+
+.promos-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+
+.promo-card {
+	position: relative;
+	min-height: 320px;
+	border-radius: 15px;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 20px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-card::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		to top,
+		rgba(29, 32, 43, 0.95) 0%,
+		rgba(29, 32, 43, 0.6) 45%,
+		transparent 100%
+	);
+	z-index: 0;
+}
+
+.promo-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.promo-badge {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	background: #FFD600;
+	color: #1D202B;
+	font-size: 13px;
+	font-weight: 700;
+	padding: 6px 14px;
+	border-radius: 100px;
+	z-index: 2;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.promo-textos {
+	position: relative;
+	z-index: 1;
+	color: #fff;
+}
+
+.promo-textos h3 {
+	font-size: 22px;
+	font-weight: 700;
+	margin-bottom: 8px;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.promo-precio {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 6px;
+}
+
+.precio-antes {
+	font-size: 15px;
+	text-decoration: line-through;
+	opacity: 0.6;
+}
+
+.precio-ahora {
+	font-size: 22px;
+	font-weight: 700;
+	color: #FFD600;
+}
+
+.promo-descripcion {
+	font-size: 14px;
+	opacity: 0.9;
+	margin-bottom: 15px;
+	line-height: 1.4;
+}
+
+.promo-boton {
+	background: #FFD600;
+	color: #1D202B;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	padding: 10px 22px;
+	border: none;
+	border-radius: 100px;
+	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	box-shadow: 0 6px 15px rgba(255, 214, 0, 0.35);
+	align-self: flex-start;
+}
+
+.promo-boton:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 20px rgba(255, 214, 0, 0.5);
+}
+
+.promo-boton:active {
+	transform: translateY(0);
+}
+
+
+
+
+
+
+
 
 @media screen and (max-width: 700px) {
 	.formulario {
